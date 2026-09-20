@@ -185,10 +185,10 @@ flowchart TD
 
 | Método | Nós | Arestas | V(G) | Caminhos independentes | Restrições de viabilidade |
 | --- | --- | --- | --- | --- | --- |
-| `PoliticaDesconto.calcular` | 23 | 33 | 12 | 12 | nenhuma |
+| `PoliticaDesconto.calcular` | 24 | 34 | 12 | 12 | nenhuma |
 | `CalculadoraFrete.calcular` | 22 | 31 | 11 | 11 | nenhuma |
 | `AnaliseRisco.avaliar` | 14 | 20 | 8 | 8 | nenhuma |
-| `PagamentoService.pagar` | 13 | 18 | 7 | 6 | a exceção não capturada soma uma aresta a mais do que o número de decisões (6) |
+| `PagamentoService.pagar` | 12 | 17 | 7 | 7 | aqui `decisões + 1` dá 6 e não 7, porque a aresta da exceção não capturada não vem de nenhum `if` do código |
 | `PedidoService.fechar` | 17 | 23 | 8 | 8 | o caminho SEM_ESTOQUE com cupom inválido só existe aqui porque a checagem de estoque vem antes da checagem do cupom; sozinho em `PoliticaDescontoTest` esse cupom daria erro |
 
 ## Matriz de testes

@@ -72,10 +72,25 @@ calculado.
 
 ### Contagem e complexidade
 
-Nós = 9 (start, B0, D1, B1, D2, B2, D3, B3, B4, end - contando start e B0
-como um nó só de entrada). Arestas = 11.
+Numerando os nós do grafo:
 
-`V(G) = E - N + 2 = 11 - 9 + 2 = 4`
+1. start
+2. B0 (`desconto = 0`)
+3. D1 (`valor >= 500?`)
+4. B1 (`desconto = 10`)
+5. D2 (`clienteVip?`)
+6. B2 (`desconto += 5`)
+7. D3 (`!pagamentoAprovado?`)
+8. B3 (`return "PAGAMENTO RECUSADO"`)
+9. B4 (`valorFinal` e o return final)
+10. end
+
+Então N = 10. As arestas são estas 12:
+
+start→B0, B0→D1, D1→B1 (V), D1→D2 (F), B1→D2, D2→B2 (V), D2→D3 (F),
+B2→D3, D3→B3 (V), D3→B4 (F), B3→end, B4→end.
+
+`V(G) = E - N + 2 = 12 - 10 + 2 = 4`
 
 Confirmando pelas decisões: 3 decisões + 1 = 4. Bate.
 
@@ -161,12 +176,34 @@ flowchart TD
     B4 --> END((end))
 ```
 
+Os pontos que o enunciado pede aparecem assim: a entrada no laço é a saída
+verdadeira de `D1`; as três classificações de temperatura são os ramos
+`D2` verdadeiro (negativa), `D3` verdadeiro (acima de 35) e `D3` falso
+(entre 0 e 35); o incremento fica no `B3`, que é por onde os três ramos
+passam antes de voltar pro `D1`; e a saída do laço é a aresta falsa do
+`D1`, que vai pro `return`.
+
 ### Contagem e complexidade
 
-Nós = 9 (start/B0 juntos, D1, D2, B1, D3, B2, B3, B4, end). Arestas = 11,
-contando a aresta de retorno do laço.
+Numerando os nós:
 
-`V(G) = E - N + 2 = 11 - 9 + 2 = 4`, batendo com 3 decisões + 1.
+1. start
+2. B0 (`alertas = 0; i = 0`)
+3. D1 (condição do `while`)
+4. D2 (`temperaturas[i] < 0?`)
+5. B1 (`alertas += 2`)
+6. D3 (`temperaturas[i] > 35?`)
+7. B2 (`alertas++`)
+8. B3 (`i++`)
+9. B4 (`return alertas`)
+10. end
+
+N = 10 e E = 12, contando a aresta de retorno do laço:
+
+start→B0, B0→D1, D1→D2 (V), D1→B4 (F), D2→B1 (V), D2→D3 (F), D3→B2 (V),
+D3→B3 (F), B1→B3, B2→B3, B3→D1 (retorno do laço), B4→end.
+
+`V(G) = E - N + 2 = 12 - 10 + 2 = 4`, batendo com 3 decisões + 1.
 
 ### Base de caminhos e vetores de entrada
 

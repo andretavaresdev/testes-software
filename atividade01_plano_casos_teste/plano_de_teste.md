@@ -1,5 +1,7 @@
 # Plano de Teste - Sistema de Reserva de Salas
 
+Aluno: André Tavares (24066498-2)
+
 ## 1. Introdução
 
 Este documento é o plano de teste do sistema de reserva de salas e espaços
@@ -25,6 +27,8 @@ Serão testados:
 - Alteração e cancelamento de reservas.
 - Permissões de professor comum x coordenação.
 - Notificações e histórico gerados por alteração/cancelamento.
+- Os requisitos não funcionais que dá pra conferir por fora: tempo da
+  busca, registro de auditoria e acesso limitado à unidade do usuário.
 
 Não serão testados nesta rodada:
 
@@ -70,7 +74,7 @@ coordenação e um usuário de outra unidade).
 
 ## 7. Recursos
 
-- Dupla responsável pela elaboração e execução dos testes.
+- Aluno responsável pela elaboração e execução dos testes.
 - Ambiente de homologação do sistema.
 - Massa de dados de teste (salas, turmas e usuários) descrita acima.
 
@@ -104,7 +108,7 @@ tudo.
 
 ## 11. Responsabilidades
 
-- A dupla é responsável por escrever e executar os casos de teste e registrar
+- Eu fico responsável por escrever e executar os casos de teste e registrar
   os defeitos encontrados.
 - O professor valida os critérios de aceite conforme a rubrica da avaliação.
 
@@ -115,9 +119,9 @@ junto com os casos de teste, para consulta durante a correção da atividade.
 
 ## 13. Aprovação
 
-Este plano foi elaborado pela dupla a partir do enunciado da atividade 01 e
-poderá ser ajustado caso surjam dúvidas sobre algum requisito durante a
-execução dos testes.
+Este plano foi feito a partir do enunciado da atividade 01 e pode ser
+ajustado caso apareça alguma dúvida sobre os requisitos durante a execução
+dos testes.
 
 ## 14. Considerações Finais
 
