@@ -1,15 +1,12 @@
 # Casos de Teste - Sistema de Reserva de Salas
 
-Aluno: André Tavares (24066498-2)
+Alunos: André Tavares (24066498-2) e Rodrigo Antonio Del Padre Filho (24042092-2)
 
 ## Caso de Teste - Criar reserva de sala
 
-Descrição: verificar se o sistema permite reservar uma sala disponível para
-uma turma compatível e recusa a reserva quando alguma regra não é atendida
-(conflito de horário, capacidade, manutenção ou fora do horário permitido).
+Descrição: verificar se o sistema permite reservar uma sala disponível para uma turma compatível e recusa a reserva quando alguma regra não é atendida (conflito de horário, capacidade, manutenção ou fora do horário permitido).
 
-Pré-condições: usuário logado como professor, com pelo menos uma sala
-disponível cadastrada.
+Pré-condições: usuário logado como professor, com pelo menos uma sala disponível cadastrada.
 
 Passos:
 1. Acessar a tela de reserva de salas.
@@ -30,16 +27,14 @@ Cenário 2 - Sobreposição de horário na mesma sala:
   - Sala A já reservada das 09h às 10h
   - Nova tentativa: Sala A, das 09h30 às 10h30
 - Resultado Esperado:
-  - O sistema recusa a reserva e avisa que já existe uma reserva conflitando
-    com esse horário.
+  - O sistema recusa a reserva e avisa que já existe uma reserva conflitando com esse horário.
 
 Cenário 3 - Horário encostado no da outra reserva, mas sem sobrepor:
 - Dados de Teste:
   - Sala A já reservada das 09h às 10h
   - Nova tentativa: Sala A, das 10h às 11h
 - Resultado Esperado:
-  - A reserva é aceita, porque uma reserva termina exatamente quando a
-    outra começa.
+  - A reserva é aceita, porque uma reserva termina exatamente quando a outra começa.
 
 Cenário 4 - Turma maior que a capacidade da sala:
 - Dados de Teste:
@@ -59,8 +54,7 @@ Cenário 6 - Sala em manutenção:
 - Dados de Teste:
   - Sala B em manutenção no dia da reserva
 - Resultado Esperado:
-  - O sistema não permite reservar essa sala nesse dia e informa que ela está
-    em manutenção.
+  - O sistema não permite reservar essa sala nesse dia e informa que ela está em manutenção.
 
 Cenário 7 - Horário antes do funcionamento (07h00):
 - Dados de Teste:
@@ -86,13 +80,11 @@ Cenário 10 - Horário depois do funcionamento (23h00):
 - Resultado Esperado:
   - O sistema recusa por ultrapassar o horário permitido.
 
-Pós-condições: sala aparece como reservada no horário confirmado, ou
-continua livre caso a reserva tenha sido recusada.
+Pós-condições: sala aparece como reservada no horário confirmado, ou continua livre caso a reserva tenha sido recusada.
 
 ## Caso de Teste - Alterar e cancelar reserva
 
-Descrição: verificar as regras de permissão para alterar uma reserva e se o
-cancelamento libera o horário, gera histórico e dispara notificação.
+Descrição: verificar as regras de permissão para alterar uma reserva e se o cancelamento libera o horário, gera histórico e dispara notificação.
 
 Pré-condições: existe uma reserva confirmada, criada por um professor comum.
 
@@ -122,26 +114,21 @@ Cenário 4 - Cancelamento de reserva:
 - Dados de Teste:
   - Reserva confirmada, cancelada pelo dono ou pela coordenação
 - Resultado Esperado:
-  - O horário volta a ficar disponível e o cancelamento fica registrado no
-    histórico da sala (quem cancelou e quando).
+  - O horário volta a ficar disponível e o cancelamento fica registrado no histórico da sala (quem cancelou e quando).
 
 Cenário 5 - Notificação após alteração ou cancelamento:
 - Dados de Teste:
   - Reserva alterada ou cancelada no cenário anterior
 - Resultado Esperado:
-  - O responsável pela reserva recebe (ou tem registrada) uma notificação
-    sobre a mudança.
+  - O responsável pela reserva recebe (ou tem registrada) uma notificação sobre a mudança.
 
-Pós-condições: a reserva fica com o novo horário, ou volta a ficar disponível
-em caso de cancelamento.
+Pós-condições: a reserva fica com o novo horário, ou volta a ficar disponível em caso de cancelamento.
 
 ## Caso de Teste - Requisitos não funcionais
 
-Descrição: conferir os três requisitos não funcionais do enunciado que dá
-pra observar usando o próprio sistema.
+Descrição: conferir os três requisitos não funcionais do enunciado que dá pra observar usando o próprio sistema.
 
-Pré-condições: base com uma quantidade de salas e reservas parecida com a de
-uso real, e dois usuários de unidades diferentes.
+Pré-condições: base com uma quantidade de salas e reservas parecida com a de uso real, e dois usuários de unidades diferentes.
 
 Cenário 1 - Tempo de resposta da busca (RNF-01):
 - Dados de Teste:
@@ -153,15 +140,12 @@ Cenário 2 - Trilha de auditoria (RNF-02):
 - Dados de Teste:
   - Criar, alterar e cancelar uma reserva, depois abrir o log de auditoria
 - Resultado Esperado:
-  - As três operações aparecem no log, com usuário, data/hora e o que foi
-    feito.
+  - As três operações aparecem no log, com usuário, data/hora e o que foi feito.
 
 Cenário 3 - Acesso restrito à unidade do usuário (RNF-03):
 - Dados de Teste:
   - Usuário da unidade 2 tentando ver/reservar uma sala da unidade 1
 - Resultado Esperado:
-  - As salas da unidade 1 não aparecem para esse usuário, ou o sistema
-    recusa a reserva.
+  - As salas da unidade 1 não aparecem para esse usuário, ou o sistema recusa a reserva.
 
-Pós-condições: nenhuma mudança nos dados, fora as reservas criadas no
-cenário 2.
+Pós-condições: nenhuma mudança nos dados, fora as reservas criadas no cenário 2.
