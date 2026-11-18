@@ -219,10 +219,6 @@ Para rodar um arquivo específico:
 npx jest tests/jogo.revelar.test.js
 ```
 
-## Colaborador(es)
-
-- Rodrigo A. Del Padre Filho
-
 ## Adaptação da implementação
 
 A lógica de `src/tabuleiro.js` foi reorganizada nesta versão. As regras do jogo permanecem as descritas acima.

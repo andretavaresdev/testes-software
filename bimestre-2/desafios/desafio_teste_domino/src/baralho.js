@@ -1,7 +1,6 @@
 /**
  * Baralho duplo-seis, embaralhamento injetável e distribuição para 2 jogadores.
  * Disciplina: Projeto, Implementação e Teste de Software (2026)
- * Colaborador: Rodrigo A. Del Padre Filho
  */
 
 const { Peca, parsePeca, VALOR_MINIMO, VALOR_MAXIMO } = require("./peca");

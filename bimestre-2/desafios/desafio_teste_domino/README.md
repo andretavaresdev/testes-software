@@ -258,10 +258,6 @@ desafio_teste_domino/
 Nome: **André Tavares**  
 RA: **24066498-2**
 
-## Créditos da base original
-
-Rodrigo A. Del Padre Filho
-
 ## Adaptação da implementação
 
 A lógica de `src/baralho.js` foi reorganizada nesta versão. As regras do jogo permanecem as descritas acima.

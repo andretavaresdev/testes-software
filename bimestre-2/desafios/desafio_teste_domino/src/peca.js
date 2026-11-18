@@ -1,7 +1,6 @@
 /**
  * Peça de dominó no conjunto duplo-seis.
  * Disciplina: Projeto, Implementação e Teste de Software (2026)
- * Colaborador: Rodrigo A. Del Padre Filho
  */
 
 class ErroPeca extends Error {

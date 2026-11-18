@@ -1,7 +1,6 @@
 /**
  * Partida de dominó para 2 jogadores (variante clássica com compra).
  * Disciplina: Projeto, Implementação e Teste de Software (2026)
- * Colaborador: Rodrigo A. Del Padre Filho
  */
 
 const { Peca, parsePeca } = require("./peca");

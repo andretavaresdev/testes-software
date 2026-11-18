@@ -124,10 +124,6 @@ Os testes rodam com Jest (`package.json`, script `test`). A implementação est�
 Nome: **André Tavares**  
 RA: **24066498-2**
 
-## Créditos da base original
-
-Rodrigo A. Del Padre Filho
-
 ## Adaptação da implementação
 
 A lógica de `src/batalhaNaval.js` foi reorganizada nesta versão. As regras do jogo permanecem as descritas acima.

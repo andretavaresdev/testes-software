@@ -144,10 +144,6 @@ npm test
 
 O script `npm test` executa o Jest em modo verboso e deve encerrar com todos os casos passando.
 
-## Colaborador(es)
-
-- Rodrigo A. Del Padre Filho
-
 ## Adaptação da implementação
 
 A lógica de `src/dado.js` foi reorganizada nesta versão. As regras do jogo permanecem as descritas acima.
