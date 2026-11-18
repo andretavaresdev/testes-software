@@ -1,0 +1,23 @@
+{
+  "name": "desafio_teste_batalha_naval",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Desafio de Teste de Software — casos de teste para Batalha Naval (tabuleiro 10x10)",
+  "scripts": {
+    "test": "jest",
+    "test:personalizacao": "jest --runInBand tests/personalizacao.test.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
+  "aluno": {
+    "nome": "André Tavares",
+    "ra": "24066498-2"
+  }
+}

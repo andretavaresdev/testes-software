@@ -1,6 +1,6 @@
 # Projeto, Implementação e Teste de Software
 
-Atividades da disciplina organizadas por bimestre.
+Atividades organizadas por bimestre.
 
 ## Bimestre 1
 
@@ -13,6 +13,7 @@ Atividades da disciplina organizadas por bimestre.
 
 - `SEMANA10`: quatro projetos TDD com Java e JUnit.
 - `SEMANA11`: testes de integração com Spring Boot, H2 e MockMvc.
-- `SEMANA14`: teste de usuário final, com relatório respondido em PDF e planilha.
+- `SEMANA14`: relatório de teste de usuário em PDF e planilha.
+- `desafios`: Batalha Naval, Campo Minado, Dominó, Ludo e Truco com Jest.
 
-O GitHub Actions executa `mvn test` nos cinco projetos Java.
+Os workflows do GitHub Actions executam os testes Java e JavaScript.

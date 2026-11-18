@@ -1,0 +1,30 @@
+{
+  "name": "desafio_teste_domino",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Desafio de Teste de Software — casos de teste para uma partida de Dominó com 2 jogadores",
+  "scripts": {
+    "test": "jest",
+    "test:personalizacao": "jest --runInBand tests/personalizacao.test.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/tests/"
+    ]
+  },
+  "aluno": {
+    "nome": "André Tavares",
+    "ra": "24066498-2"
+  }
+}

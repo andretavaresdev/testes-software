@@ -1,0 +1,23 @@
+{
+  "name": "desafio_teste_ludo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Casos de teste em JavaScript para uma partida de Ludo com 2 jogadores — disciplina de Teste de Software 2026",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:personalizacao": "jest --runInBand tests/personalizacao.test.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
+  "aluno": {
+    "nome": "André Tavares",
+    "ra": "24066498-2"
+  }
+}

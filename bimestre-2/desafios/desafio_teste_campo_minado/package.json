@@ -1,0 +1,23 @@
+{
+  "name": "desafio_teste_campo_minado",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Casos de teste em JavaScript para Campo Minado 18x14 com 40 bombas",
+  "scripts": {
+    "test": "jest --colors",
+    "test:personalizacao": "jest --runInBand tests/personalizacao.test.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
+  "aluno": {
+    "nome": "André Tavares",
+    "ra": "24066498-2"
+  }
+}

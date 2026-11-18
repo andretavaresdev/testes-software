@@ -1,0 +1,26 @@
+{
+  "name": "desafio_teste_truco",
+  "version": "1.0.0",
+  "description": "Casos de teste para o Truco Paulista (duas duplas) — disciplina Projeto, Implementação e Teste de Software 2026",
+  "private": true,
+  "scripts": {
+    "test": "jest --verbose",
+    "test:personalizacao": "jest --runInBand tests/personalizacao.test.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/tests/helpers\\.js$"
+    ]
+  },
+  "aluno": {
+    "nome": "André Tavares",
+    "ra": "24066498-2"
+  }
+}

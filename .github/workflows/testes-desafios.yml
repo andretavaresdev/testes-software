@@ -1,0 +1,33 @@
+name: Testes dos desafios
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projeto:
+          - bimestre-2/desafios/desafio_teste_batalha_naval
+          - bimestre-2/desafios/desafio_teste_campo_minado
+          - bimestre-2/desafios/desafio_teste_domino
+          - bimestre-2/desafios/desafio_teste_ludo
+          - bimestre-2/desafios/desafio_teste_truco
+    defaults:
+      run:
+        working-directory: ${{ matrix.projeto }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: ${{ matrix.projeto }}/package-lock.json
+      - name: Instalar dependências
+        run: npm ci
+      - name: Executar testes
+        run: npm test -- --runInBand --ci
