@@ -1,0 +1,29 @@
+Perfil;Tarefa;Tempo (s);Sucesso (S/N);Erros;Observações
+P01;Acessar o site;12;S;0;Site acessado
+P01;Buscar fone de ouvido Bluetooth;25;S;0;Pesquisa concluída
+P01;Aplicar filtros Full e avaliação;42;S;0;Filtros aplicados
+P01;Comparar e abrir detalhes;39;S;0;Produto selecionado
+P01;Adicionar ao carrinho;24;S;0;Produto adicionado
+P01;Simular início da compra;25;S;0;Simulação iniciada
+P01;Retornar à tela inicial;18;S;0;Retornou ao início
+P02;Acessar o site;15;S;0;Site acessado
+P02;Buscar fone de ouvido Bluetooth;32;S;0;Pesquisa concluída
+P02;Aplicar filtros Full e avaliação;55;S;1;Selecionou filtro incorreto e corrigiu
+P02;Comparar e abrir detalhes;44;S;0;Produto selecionado
+P02;Adicionar ao carrinho;27;S;0;Produto adicionado
+P02;Simular início da compra;25;S;0;Simulação iniciada
+P02;Retornar à tela inicial;19;S;0;Retornou ao início
+P03;Acessar o site;18;S;0;Site acessado
+P03;Buscar fone de ouvido Bluetooth;37;S;0;Pesquisa concluída
+P03;Aplicar filtros Full e avaliação;66;S;1;Dificuldade para localizar a ordenação
+P03;Comparar e abrir detalhes;49;S;1;Voltou à lista após abrir produto
+P03;Adicionar ao carrinho;31;S;0;Produto adicionado
+P03;Simular início da compra;28;S;0;Simulação iniciada
+P03;Retornar à tela inicial;20;S;0;Retornou ao início
+P04;Acessar o site;14;S;0;Site acessado
+P04;Buscar fone de ouvido Bluetooth;31;S;0;Pesquisa concluída
+P04;Aplicar filtros Full e avaliação;58;S;1;Confundiu entrega Full com frete grátis
+P04;Comparar e abrir detalhes;42;S;0;Produto selecionado
+P04;Adicionar ao carrinho;27;S;0;Produto adicionado
+P04;Simular início da compra;36;S;0;Simulação iniciada
+P04;Retornar à tela inicial;21;S;0;Retornou ao início

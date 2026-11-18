@@ -1,0 +1,30 @@
+name: Testes Java
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projeto:
+          - bimestre-2/SEMANA10/bubblesort-tdd
+          - bimestre-2/SEMANA10/carrinho-compras-tdd
+          - bimestre-2/SEMANA10/conta-bancaria-tdd-maven
+          - bimestre-2/SEMANA10/estoque-tdd
+          - bimestre-2/SEMANA11/exercicios_integracao_springboot
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+          cache-dependency-path: ${{ matrix.projeto }}/pom.xml
+      - name: Executar testes
+        run: mvn --batch-mode test
+        working-directory: ${{ matrix.projeto }}
