@@ -13,6 +13,6 @@ Atividades da disciplina organizadas por bimestre.
 
 - `SEMANA10`: quatro projetos TDD com Java e JUnit.
 - `SEMANA11`: testes de integração com Spring Boot, H2 e MockMvc.
-- `SEMANA14`: exercício de teste de usuário final, com simulação de perfis e planilha.
+- `SEMANA14`: teste de usuário final, com relatório respondido em PDF e planilha.
 
-O workflow de GitHub Actions executa `mvn test` nos cinco projetos do segundo bimestre.
+O GitHub Actions executa `mvn test` nos cinco projetos Java.

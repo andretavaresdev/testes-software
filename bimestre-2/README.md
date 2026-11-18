@@ -2,12 +2,12 @@
 
 ## SEMANA10
 
-Prática de TDD: Bubble Sort, carrinho de compras, conta bancária e estoque.
+Bubble Sort, carrinho de compras, conta bancária e estoque, com Java e JUnit.
 
 ## SEMANA11
 
-Testes de integração do serviço e da API de produtos, usando Spring Boot, JPA, H2 e MockMvc.
+Testes de integração com Spring Boot, H2 e MockMvc.
 
 ## SEMANA14
 
-Relatório do teste de usuário final do Mercado Livre, com quatro perfis simulados, tempos, registros e análise dos critérios.
+Relatório final em PDF e planilha de observação.
