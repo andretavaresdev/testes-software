@@ -1,24 +1,12 @@
 # Desafio: Campo Minado
 
-**Nome:** André Tavares  
-**RA:** 24066498-2
-
-### Cenário adicional desta versão
-
-Ausência de vizinhos repetidos e da própria célula. O arquivo `tests/personalizacao.test.js` acrescenta essa verificação à suíte original. Execute somente esse cenário com `npm run test:personalizacao` ou todos os testes com `npm test`.
-
-Esta versão adapta a implementação da base original mantendo as regras e a interface pública do desafio. Os créditos originais foram preservados.
-
-Repositório: `desafio_teste_campo_minado`
-
-Disciplina: Projeto, Implementação e Teste de Software (2026)  
-Prazo: 22/11/2026
+Campo Minado em JavaScript, com tabuleiro de 18 x 14 e 40 bombas.
 
 ## Especificação do desafio
 
-O enunciado pede **casos de teste em JavaScript para testar JavaScript** de um Campo Minado com tabuleiro **18 x 14** e **40 bombas**.
+Campo Minado com tabuleiro **18 x 14** e **40 bombas**, testado com Jest.
 
-Como o enunciado não detalha as regras do jogo, esta implementação segue o Campo Minado clássico (estilo Windows), com as decisões abaixo documentadas para o professor.
+O jogo segue as regras clássicas do Campo Minado.
 
 ### Tabuleiro oficial
 
@@ -43,7 +31,7 @@ A convenção adotada é **18 linhas × 14 colunas** (altura × largura). Coorde
 7. **Vitória.** Todas as 212 células seguras foram reveladas. Não é necessário marcar as bombas com bandeira.
 8. **Derrota.** Uma bomba foi revelada. A célula explodida é identificada e, após o fim da partida, as bombas passam a aparecer na visão do jogador.
 9. **Fim de jogo.** Depois de vitória ou derrota, revelar, marcar bandeira ou abrir adjacentes lança erro.
-10. **Marca de interrogação (?).** Não foi implementada, porque o enunciado não a exige.
+10. **Marca de interrogação (?).** Não há esse recurso.
 
 ### API principal
 
@@ -89,7 +77,7 @@ desafio_teste_campo_minado/
 
 O curso usa sobretudo JUnit (Java) e Playwright. Como este desafio pede testes em JavaScript para código JavaScript e não há um padrão JS de teste unitário nas pastas `aulas/` e `atividades/`, a suíte foi escrita em **Jest**, com nomes no estilo da disciplina (`deve...`, `não deve...`).
 
-## Como funcionam os casos de teste
+## Casos de teste
 
 São **69 casos**, agrupados em casos normais, limites e erros. A aleatoriedade é controlada com `geradorComSemente` ou com `posicoesBombas` fixas (sempre 40 bombas no tabuleiro 18×14).
 
@@ -218,7 +206,3 @@ Para rodar um arquivo específico:
 ```bash
 npx jest tests/jogo.revelar.test.js
 ```
-
-## Adaptação da implementação
-
-A lógica de `src/tabuleiro.js` foi reorganizada nesta versão. As regras do jogo permanecem as descritas acima.

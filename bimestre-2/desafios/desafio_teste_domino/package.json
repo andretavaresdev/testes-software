@@ -22,9 +22,5 @@
       "<rootDir>/node_modules/",
       "<rootDir>/tests/"
     ]
-  },
-  "aluno": {
-    "nome": "André Tavares",
-    "ra": "24066498-2"
   }
 }

@@ -1,27 +1,12 @@
 # Desafio: Teste do Truco Paulista
 
-**Nome:** André Tavares  
-**RA:** 24066498-2
-
-### Cenário adicional desta versão
-
-Distribuição para todas as posições de carteador. O arquivo `tests/personalizacao.test.js` acrescenta essa verificação à suíte original. Execute somente esse cenário com `npm run test:personalizacao` ou todos os testes com `npm test`.
-
-Esta versão adapta a implementação da base original mantendo as regras e a interface pública do desafio. Os créditos originais foram preservados.
-
-Repositório: `desafio_teste_truco`
-
-Disciplina: Projeto, Implementação e Teste de Software (2026)
+Truco paulista com quatro jogadores em duas duplas, com testes em Jest.
 
 ## Especificação do desafio
 
-O enunciado do curso pede:
+O projeto contém testes em JavaScript para o truco paulista com duas duplas.
 
-- casos de teste para testar o **truco paulista**;
-- truco de **duas duplas** (4 jogadores);
-- casos de teste em **JavaScript para testar JavaScript**.
-
-Como o repositório da disciplina não detalha as regras da modalidade, a implementação e os testes seguem o regulamento da **Federação Paulista de Truco**, conforme o texto do VI JUFFS (2024), com detalhes operacionais de mesa (ordem das cartas, início da rodada e carta coberta) que esse regulamento deixa implícitos.
+As regras utilizadas estão descritas nas seções abaixo.
 
 ### Mesa e baralho
 
@@ -53,7 +38,7 @@ Qualquer manilha é mais forte do que o 3. O naipe da vira não altera a força 
 - A partida vai até **12 pontos**.
 - Cada mão vale **1 ponto** e é disputada em melhor de 3 rodadas. O valor pode subir para **3 (truco), 6, 9 e 12**.
 - Quem ganhar duas rodadas leva a mão.
-- Regras de empate (cango), segundo o Art. 5º §2º do regulamento da Federação Paulista / VI JUFFS:
+- Regras de empate (cango):
   - empate na primeira: quem ganhar a segunda vence a mão;
   - empate na segunda: vence quem ganhou a primeira;
   - empate na primeira e na segunda: quem fizer a terceira vence a mão;
@@ -64,7 +49,7 @@ Qualquer manilha é mais forte do que o 3. O naipe da vira não altera a força 
 
 ### Aumentos (truco, seis, nove e doze)
 
-- O pedido só pode ser feito **na vez** do jogador, como prevê o regulamento da Federação Paulista.
+- O pedido só pode ser feito **na vez** do jogador.
 - Se o adversário **aceitar**, a mão passa a valer o valor proposto.
 - Se o adversário **correr**, a dupla que pediu leva o valor anterior: correr do truco vale 1; do seis vale 3; do nove vale 6; do doze vale 9.
 - A dupla adversária também pode **retrucar** (aumentar) imediatamente.
@@ -72,7 +57,7 @@ Qualquer manilha é mais forte do que o 3. O naipe da vira não altera a força 
 - A dupla que pediu o aumento não pode respondê-lo.
 - O construtor de `Partida` aceita `placarInicial: [pontosDupla0, pontosDupla1]`, com inteiros de 0 a 11, para começar a partida em um placar conhecido (mão de onze, mão de ferro, etc.). O padrão é `[0, 0]`.
 
-O § 9º do regulamento do VI JUFFS, sobre o doze, está evidentemente trocado (repete o texto do seis/nove). Aqui o doze é o aumento feito sobre o **nove**: aceito vale 12; se o adversário correr, quem pediu leva 9.
+O doze é pedido após o **nove**: se aceito, vale 12 pontos; se recusado, quem pediu ganha 9.
 
 ### Carta coberta
 
@@ -94,20 +79,20 @@ O § 9º do regulamento do VI JUFFS, sobre o doze, está evidentemente trocado (
 - Não é permitido pedir aumento nem esconder carta com valor nulo: no escuro, a carta conserva o valor real.
 - Se as três rodadas empatarem, ninguém pontua e joga-se outra mão de ferro.
 
-### Decisões de regra assumidas (para o professor)
+### Outras regras
 
-Estes pontos não estavam no enunciado e foram fixados para a implementação ficar testável:
+Regras consideradas nos testes:
 
-1. Fonte principal: regulamento da Federação Paulista / VI JUFFS. Em caso de conflito com outros regulamentos de torneio (por exemplo, no empate das três rodadas alguns textos dão o ponto à dupla que distribuiu as cartas), prevalece o JUFFS: **ninguém pontua**.
-2. Pedido de aumento somente na vez do jogador (Federação Paulista), e não “a qualquer momento”.
+1. Se as três rodadas empatarem, ninguém pontua.
+2. O aumento só pode ser pedido na vez do jogador.
 3. Depois de aceito um aumento, o próximo valor (por exemplo o seis, depois do truco) pode ser pedido mais tarde, na vez de um jogador, **somente pela dupla que aceitou o último aumento**.
 4. Na mão de onze não há novos aumentos: a mão vale 3; se a dupla com 11 correr, o adversário leva 1. Na mão de ferro também não há aumentos.
 5. O placar é limitado a 12, mesmo que a mão valha mais do que o necessário para fechar a partida.
-6. Sinais entre parceiros, corte, queima de cartas e punições de mesa (“tento” por carta a mais) ficaram **fora do escopo**, porque são regras de condução de torneio, não da lógica da mão.
+6. Sinais entre parceiros, corte, queima de cartas e punições de mesa não fazem parte do jogo.
 
-## Como funcionam os casos de teste
+## Casos de teste
 
-Os testes foram escritos com **Jest**. Cada caso tem um identificador (`CT-...`), cobre um caminho da regra (caso normal, limite ou erro) e declara o resultado esperado. A suíte tem **91 testes**, todos executados por `npm test`.
+Os testes foram escritos com **Jest**. Cada caso tem um identificador (`CT-...`), cobre um caminho da regra (caso normal, limite ou erro) e declara o resultado esperado. A suíte possui **91 testes** e pode ser executada com `npm test`.
 
 ### Carta (`tests/carta.test.js`)
 
@@ -264,13 +249,4 @@ O comando `npm test` dispara o Jest em modo verbose e deve encerrar com **91 tes
 
 Os módulos da implementação estão em `src/` (`carta.js`, `baralho.js`, `ranking.js`, `aposta.js` e `partida.js`). Os testes estão em `tests/`. A classe `Partida` permite injetar as mãos e a vira, para que os casos não dependam de sorte no embaralhamento. Para começar em um placar conhecido, use a opção de construtor `placarInicial` (inteiros de 0 a 11 por dupla); não altere `partida.placar` diretamente.
 
-O arquivo `tests/helpers.js` **faz parte da especificação** dos casos de teste: reúne as fábricas `C`, `distribuicaoPadrao`, `novaPartida` e `jogar`. A função `novaPartida` encaminha `placarInicial` ao construtor de `Partida`. Esse arquivo não é código de produção e fica fora da cobertura (`collectCoverageFrom` aponta só para `src/`).
-
-## Identificação da versão
-
-Nome: **André Tavares**  
-RA: **24066498-2**
-
-## Adaptação da implementação
-
-A lógica de `src/baralho.js` foi reorganizada nesta versão. As regras do jogo permanecem as descritas acima.
+O arquivo `tests/helpers.js` reúne as funções `C`, `distribuicaoPadrao`, `novaPartida` e `jogar`. A função `novaPartida` encaminha `placarInicial` ao construtor de `Partida`. Esse arquivo não é código de produção e fica fora da cobertura (`collectCoverageFrom` aponta só para `src/`).

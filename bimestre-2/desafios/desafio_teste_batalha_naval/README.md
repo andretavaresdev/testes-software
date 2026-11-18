@@ -1,18 +1,6 @@
 # Desafio de Teste — Batalha Naval
 
-**Nome:** André Tavares  
-**RA:** 24066498-2
-
-### Cenário adicional desta versão
-
-Posicionamento nos limites com os dois sentidos. O arquivo `tests/personalizacao.test.js` acrescenta essa verificação à suíte original. Execute somente esse cenário com `npm run test:personalizacao` ou todos os testes com `npm test`.
-
-Esta versão adapta a implementação da base original mantendo as regras e a interface pública do desafio. Os créditos originais foram preservados.
-
-Repositório: `desafio_teste_batalha_naval`
-
-Disciplina: Projeto, Implementação e Teste de Software (2026)
-Entrega até 22/11/2026.
+Regras e testes do jogo de Batalha Naval com tabuleiro 10 x 10.
 
 ## Especificação do desafio
 
@@ -23,7 +11,7 @@ Implementar e testar, em JavaScript, as regras de um tabuleiro de **Batalha Nava
 - 1 Submarino (ocupa 3 casas)
 - 1 Destroier ou Hidroavião (ocupa 2 casas)
 
-Os casos de teste são escritos em JavaScript para testar a implementação em JavaScript (Jest).
+Os testes usam Jest.
 
 ### Regras implementadas
 
@@ -43,9 +31,9 @@ Os casos de teste são escritos em JavaScript para testar a implementação em J
 8. O jogo termina (`fimDeJogo: true`) quando todos os navios da frota foram afundados. Depois disso, novos tiros são rejeitados.
 9. Não é permitido atirar duas vezes na mesma célula, nem posicionar navios depois que os tiros começaram.
 
-### Premissas confirmadas
+### Regras e limites
 
-O enunciado é breve. Estas decisões foram adotadas e confirmadas:
+São consideradas as seguintes regras:
 
 - Navios adjacentes (lado a lado, sem compartilhar casas) são permitidos. Não há “casa de água” obrigatória entre eles.
 - O Hidroavião é linear e ocupa 2 casas, como o Destroier; não tem forma especial em T. Só um dos dois entra na frota.
@@ -53,7 +41,7 @@ O enunciado é breve. Estas decisões foram adotadas e confirmadas:
 - A notação `A1`–`J10` é aceita, com a letra representando a linha.
 - Tamanho e tipo do navio são fixos: o chamador informa o tipo, e o tamanho vem da especificação.
 
-## Como funcionam os casos de teste
+## Casos de teste
 
 A suíte está em `tests/batalhaNaval.test.js` e cobre casos normais, de limite e de erro. Todas as formas da API de coordenadas (números, `{ linha, coluna }` e `A1`–`J10`) estão fixadas por teste. Os casos inválidos esperam o lançamento de `ErroBatalhaNaval` com um código específico.
 
@@ -118,12 +106,3 @@ npm test
 ```
 
 Os testes rodam com Jest (`package.json`, script `test`). A implementação está em `src/batalhaNaval.js`.
-
-## Identificação da versão
-
-Nome: **André Tavares**  
-RA: **24066498-2**
-
-## Adaptação da implementação
-
-A lógica de `src/batalhaNaval.js` foi reorganizada nesta versão. As regras do jogo permanecem as descritas acima.

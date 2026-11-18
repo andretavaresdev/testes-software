@@ -1,27 +1,10 @@
 # Desafio de Teste — Dominó (2 jogadores)
 
-**Nome:** André Tavares  
-**RA:** 24066498-2
-
-### Cenário adicional desta versão
-
-Conservação de peças na distribuição. O arquivo `tests/personalizacao.test.js` acrescenta essa verificação à suíte original. Execute somente esse cenário com `npm run test:personalizacao` ou todos os testes com `npm test`.
-
-Esta versão adapta a implementação da base original mantendo as regras e a interface pública do desafio. Os créditos originais foram preservados.
-
-Repositório: `desafio_teste_domino`
-
-Disciplina: Projeto, Implementação e Teste de Software (2026)
-
-Entrega até 22/11/2026.
-
-Implementação em JavaScript das regras de uma partida de dominó para 2 jogadores, com casos de teste em JavaScript (Jest) para testar o JavaScript.
-
----
+Partida de dominó para dois jogadores, com testes em Jest.
 
 ## Especificação do desafio
 
-O enunciado pede casos de teste em JavaScript para testar uma partida de Dominó para 2 jogadores. Como o repositório da disciplina não detalha a variante, foi adotada a **variante clássica com compra** no conjunto **duplo-seis**, com as regras abaixo explicitadas para que os testes sejam determinísticos.
+Os testes verificam uma partida de dominó para dois jogadores. O jogo usa o conjunto duplo-seis e a variante clássica com compra.
 
 ### Regras de negócio
 
@@ -44,7 +27,7 @@ O enunciado pede casos de teste em JavaScript para testar uma partida de Dominó
 | RN-15 | Após o encerramento (batida, trancado ou empate), jogar, comprar ou passar é rejeitado. |
 | RN-16 | Jogador, peça, ponta ou operação incompatível com o estado atual geram erro com código e mensagem em português. |
 
-### Regras confirmadas
+### Regras e limites
 
 Além das RN acima, valem as definições abaixo (já fixadas pelos testes):
 
@@ -84,7 +67,7 @@ Para cenários de meio e fim de jogo, use `Partida.criarParaTeste({ maos, monte,
 
 ---
 
-## Como funcionam os casos de teste
+## Casos de teste
 
 Os testes estão em `tests/*.test.js`, escritos com Jest. Cada caso tem um identificador `CT-...` e cobre situação normal, limite ou erro. A suíte tem **87 testes**.
 
@@ -252,12 +235,3 @@ desafio_teste_domino/
 ```
 
 ---
-
-## Identificação da versão
-
-Nome: **André Tavares**  
-RA: **24066498-2**
-
-## Adaptação da implementação
-
-A lógica de `src/baralho.js` foi reorganizada nesta versão. As regras do jogo permanecem as descritas acima.

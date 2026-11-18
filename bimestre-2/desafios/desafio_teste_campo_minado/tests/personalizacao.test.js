@@ -1,7 +1,3 @@
-/** Versão: André Tavares | RA: 24066498-2
- * Cenário adicional: Ausência de vizinhos repetidos e da própria célula.
- */
-
 const { todasAsPosicoes, vizinhos } = require('../src/tabuleiro');
 test('cada célula possui apenas vizinhos distintos e externos a ela', () => {
   for (const p of todasAsPosicoes()) {

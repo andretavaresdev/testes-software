@@ -15,9 +15,5 @@
     "testMatch": [
       "**/tests/**/*.test.js"
     ]
-  },
-  "aluno": {
-    "nome": "André Tavares",
-    "ra": "24066498-2"
   }
 }

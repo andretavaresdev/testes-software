@@ -18,9 +18,5 @@
       "/node_modules/",
       "/tests/helpers\\.js$"
     ]
-  },
-  "aluno": {
-    "nome": "André Tavares",
-    "ra": "24066498-2"
   }
 }

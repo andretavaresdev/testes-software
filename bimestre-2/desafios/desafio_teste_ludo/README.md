@@ -1,21 +1,10 @@
 # Desafio de Teste — Ludo (2 jogadores)
 
-**Nome:** André Tavares  
-**RA:** 24066498-2
-
-### Cenário adicional desta versão
-
-Proteção contra alterações na sequência fornecida. O arquivo `tests/personalizacao.test.js` acrescenta essa verificação à suíte original. Execute somente esse cenário com `npm run test:personalizacao` ou todos os testes com `npm test`.
-
-Esta versão adapta a implementação da base original mantendo as regras e a interface pública do desafio. Os créditos originais foram preservados.
-
-Repositório `desafio_teste_ludo` da disciplina **Projeto, Implementação e Teste de Software (2026)**.
-
-Casos de teste em JavaScript (Jest) para testar uma implementação em JavaScript de uma partida de Ludo para **dois jogadores**.
+Partida de Ludo para dois jogadores, com testes em Jest.
 
 ## Especificação do desafio
 
-O enunciado em `desafios.md` pede casos de teste em JavaScript para testar JavaScript, em uma partida de Ludo para 02 jogadores. O regulamento completo do jogo não está no repositório da disciplina. Esta implementação segue o tabuleiro clássico e as regras abaixo, declaradas de forma explícita para o professor revisar.
+Os testes verificam uma partida de Ludo para dois jogadores. São utilizadas as regras de tabuleiro descritas abaixo.
 
 ### Tabuleiro e peões
 
@@ -51,7 +40,7 @@ O enunciado em `desafios.md` pede casos de teste em JavaScript para testar JavaS
 
 O método `definirPosicao(jogador, peão, passos)` monta cenários (base, percurso, reta ou chegada) sem simular dezenas de rolagens. A partida integrada `CT-INT-03` percorre a volta completa **somente** com `rolar()` e `mover()`.
 
-## Como funcionam os casos de teste
+## Casos de teste
 
 Os testes estão em `tests/dado.test.js` e `tests/ludo.test.js`, organizados por requisito. Cada caso usa um jogo isolado e, quando o resultado depende do dado, uma sequência injetada.
 
@@ -143,7 +132,3 @@ npm test
 ```
 
 O script `npm test` executa o Jest em modo verboso e deve encerrar com todos os casos passando.
-
-## Adaptação da implementação
-
-A lógica de `src/dado.js` foi reorganizada nesta versão. As regras do jogo permanecem as descritas acima.
