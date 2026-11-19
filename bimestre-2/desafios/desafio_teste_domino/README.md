@@ -235,3 +235,7 @@ desafio_teste_domino/
 ```
 
 ---
+
+## Colaborador
+
+- André Tavares (RA: 24066498-2)

@@ -106,3 +106,7 @@ npm test
 ```
 
 Os testes rodam com Jest (`package.json`, script `test`). A implementação está em `src/batalhaNaval.js`.
+
+## Colaborador
+
+- André Tavares (RA: 24066498-2)

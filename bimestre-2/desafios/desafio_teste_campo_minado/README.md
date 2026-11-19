@@ -206,3 +206,7 @@ Para rodar um arquivo específico:
 ```bash
 npx jest tests/jogo.revelar.test.js
 ```
+
+## Colaborador
+
+- André Tavares (RA: 24066498-2)

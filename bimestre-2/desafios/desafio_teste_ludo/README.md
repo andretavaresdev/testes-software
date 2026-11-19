@@ -132,3 +132,7 @@ npm test
 ```
 
 O script `npm test` executa o Jest em modo verboso e deve encerrar com todos os casos passando.
+
+## Colaborador
+
+- André Tavares (RA: 24066498-2)

@@ -250,3 +250,7 @@ O comando `npm test` dispara o Jest em modo verbose e deve encerrar com **91 tes
 Os módulos da implementação estão em `src/` (`carta.js`, `baralho.js`, `ranking.js`, `aposta.js` e `partida.js`). Os testes estão em `tests/`. A classe `Partida` permite injetar as mãos e a vira, para que os casos não dependam de sorte no embaralhamento. Para começar em um placar conhecido, use a opção de construtor `placarInicial` (inteiros de 0 a 11 por dupla); não altere `partida.placar` diretamente.
 
 O arquivo `tests/helpers.js` reúne as funções `C`, `distribuicaoPadrao`, `novaPartida` e `jogar`. A função `novaPartida` encaminha `placarInicial` ao construtor de `Partida`. Esse arquivo não é código de produção e fica fora da cobertura (`collectCoverageFrom` aponta só para `src/`).
+
+## Colaborador
+
+- André Tavares (RA: 24066498-2)
